@@ -150,7 +150,7 @@ keybinding:
         prevBlock: <left>
         nextBlock: <right>
         prevBlock-alt: h
-        nextBlock-alt: l
+        nextBlock-alt: i
         nextBlock-alt2: <tab>
         prevBlock-alt2: <backtab>
         jumpToBlock:
@@ -219,7 +219,7 @@ keybinding:
         commitChangesWithEditor: C
         findBaseCommitForFixup: <c-f>
         confirmDiscard: x
-        ignoreFile: i
+        ignoreFile: I
         refreshFiles: r
         stashAllChanges: s
         viewStashOptions: S
@@ -243,7 +243,7 @@ keybinding:
         renameBranch: R
         mergeIntoCurrentBranch: M
         moveCommitsToNewBranch: "N"
-        viewGitFlowOptions: i
+        viewGitFlowOptions: I
         fastForward: f
         createTag: T
         pushTag: P
