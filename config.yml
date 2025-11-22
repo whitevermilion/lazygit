@@ -48,8 +48,6 @@ gui:
             - default
     commitLength:
         show: true
-    # 使用图标
-    showIcons: true
     nerdFontsVersion: ""
     showFileIcons: true
     commitAuthorShortLength: 2
@@ -136,8 +134,8 @@ keybinding:
         togglePanel: <tab>
         prevItem: <up>
         nextItem: <down>
-        prevItem-alt: k
-        nextItem-alt: j
+        prevItem-alt: e
+        nextItem-alt: n
         prevPage: ','
         nextPage: .
         scrollLeft: H
@@ -180,8 +178,8 @@ keybinding:
         openFile: o
         scrollUpMain: <pgup>
         scrollDownMain: <pgdown>
-        scrollUpMain-alt1: K
-        scrollDownMain-alt1: J
+        scrollUpMain-alt1: E
+        scrollDownMain-alt1: N
         scrollUpMain-alt2: <c-u>
         scrollDownMain-alt2: <c-d>
         executeShellCommand: ':'
@@ -262,8 +260,8 @@ keybinding:
         markCommitAsFixup: f
         createFixupCommit: F
         squashAboveCommits: S
-        moveDownCommit: <c-j>
-        moveUpCommit: <c-k>
+        moveDownCommit: <c-n>
+        moveUpCommit: <c-e>
         amendToCommit: A
         resetCommitAuthor: a
         pickCommit: p
