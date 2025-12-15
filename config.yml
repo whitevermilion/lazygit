@@ -276,7 +276,7 @@ keybinding:
         openLogMenu: <c-l>
         openInBrowser: o
         viewBisectOptions: b
-        startInteractiveRebase: i
+        startInteractiveRebase: I
         selectCommitsOfCurrentBranch: '*'
     amendAttribute:
         resetAuthor: a
@@ -292,7 +292,7 @@ keybinding:
         pickBothHunks: b
         editSelectHunk: E
     submodules:
-        init: i
+        init: I
         update: u
         bulkMenu: b
     commitMessage:
