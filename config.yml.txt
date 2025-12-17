@@ -1,156 +1,652 @@
+# 与 Lazygit UI 相关的配置
 gui:
-    authorColors: {}
-    branchColors: {}
-    branchColorPatterns: {}
-    customIcons:
-        filenames: {}
-        extensions: {}
-    scrollHeight: 2
-    scrollPastBottom: true
-    scrollOffMargin: 2
-    scrollOffBehavior: margin
-    tabWidth: 4
-    mouseEvents: true
-    skipAmendWarning: false
-    skipDiscardChangeWarning: false
-    skipStashWarning: false
-    skipNoStagedFilesWarning: false
-    skipRewordInEditorWarning: false
-    skipSwitchWorktreeOnCheckoutWarning: false
-    sidePanelWidth: 0.3333
-    expandFocusedSidePanel: false
-    expandedSidePanelWeight: 2
-    mainPanelSplitMode: flexible
-    enlargedSideViewLocation: left
-    wrapLinesInStagingView: true
-    useHunkModeInStagingView: true
-    language: auto
-    timeFormat: 02 Jan 06
-    shortTimeFormat: 3:04PM
-    theme:
-        activeBorderColor:
-            - green
-            - bold
-        inactiveBorderColor:
-            - default
-        searchingActiveBorderColor:
-            - cyan
-            - bold
-        optionsTextColor:
-            - blue
-        selectedLineBgColor:
-            - blue
-        inactiveViewSelectedLineBgColor:
-            - bold
-        cherryPickedCommitFgColor:
-            - blue
-        cherryPickedCommitBgColor:
-            - cyan
-        markedBaseCommitFgColor:
-            - blue
-        markedBaseCommitBgColor:
-            - yellow
-        unstagedChangesColor:
-            - red
-        defaultFgColor:
-            - default
-    commitLength:
-        show: true
-    showListFooter: true
-    showFileTree: true
-    showRootItemInFileTree: true
-    showNumstatInFilesView: false
-    showRandomTip: true
-    showCommandLog: true
-    showBottomLine: true
-    showPanelJumps: true
-    showIcons: false
-    nerdFontsVersion: ""
-    showFileIcons: true
-    commitAuthorShortLength: 2
-    commitAuthorLongLength: 17
-    commitHashLength: 8
-    showBranchCommitHash: false
-    showDivergenceFromBaseBranch: none
-    commandLogSize: 8
-    splitDiff: auto
-    screenMode: normal
-    border: rounded
-    animateExplosion: true
-    portraitMode: auto
-    filterMode: substring
-    spinner:
-        frames:
-            - '|'
-            - /
-            - '-'
-            - \
-        rate: 50
-    statusPanelView: dashboard
-    switchToFilesAfterStashPop: true
-    switchToFilesAfterStashApply: true
-    switchTabsWithPanelJumpKeys: false
+  # 查看 https://github.com/jesseduffield/lazygit/blob/master/docs/Config.md#custom-author-color
+  authorColors: {}  # 自定义作者颜色
+
+  # 查看 https://github.com/jesseduffield/lazygit/blob/master/docs/Config.md#custom-branch-color
+  branchColorPatterns: {}  # 自定义分支颜色模式
+
+  # 文件名和文件扩展名的自定义图标
+  # 查看 https://github.com/jesseduffield/lazygit/blob/master/docs/Config.md#custom-files-icon--color
+  customIcons:
+    # 文件名到图标属性（图标和颜色）的映射
+    filenames: {}  # 文件名图标映射
+
+    # 文件扩展名（包括点）到图标属性（图标和颜色）的映射
+    extensions: {}  # 文件扩展名图标映射
+
+  # 滚动主窗口时每次滚动的行数
+  scrollHeight: 2  # 滚动高度
+
+  # 如果为 true，允许滚动到主窗口内容底部之后
+  scrollPastBottom: true  # 允许滚动到底部之外
+
+  # 查看 https://github.com/jesseduffield/lazygit/blob/master/docs/Config.md#scroll-off-margin
+  scrollOffMargin: 2  # 滚动边距
+
+  # 可选值：'margin'（默认）| 'jump'
+  scrollOffBehavior: margin  # 滚动行为
+
+  # 每个制表符的空格数；用于主视图中显示的所有内容，但可能主要与差异视图相关。
+  # 注意：使用分页器时，分页器有自己的制表符宽度设置，因此需要在分页器命令中单独传递。
+  tabWidth: 4  # 制表符宽度
+
+  # 如果为 true，捕获鼠标事件。
+  # 捕获鼠标事件时，选择文本会稍微困难一些：例如，在 macOS 上需要按住 option 键。
+  mouseEvents: true  # 启用鼠标事件
+
+  # 如果为 true，修改提交时不显示警告。
+  skipAmendWarning: false  # 跳过修改提交警告
+
+  # 如果为 true，在暂存视图中丢弃更改时不显示警告。
+  skipDiscardChangeWarning: false  # 跳过丢弃更改警告
+
+  # 如果为 true，应用/弹出存储时不显示警告
+  skipStashWarning: false  # 跳过存储警告
+
+  # 如果为 true，尝试提交没有暂存文件时不显示警告；而是暂存所有未暂存的文件。
+  skipNoStagedFilesWarning: false  # 跳过无暂存文件警告
+
+  # 如果为 true，通过外部编辑器重写提交时不显示警告
+  skipRewordInEditorWarning: false  # 跳过编辑器中重写提交警告
+
+  # 如果为 true，在检出其他工作树中已检出的分支时，无需确认即可切换到该工作树
+  skipSwitchWorktreeOnCheckoutWarning: false  # 跳转到工作树时切换警告
+
+  # 用于左侧部分的总屏幕宽度比例。如果您使用窄屏幕，可能需要选择较小的数字（例如 0.2），以便查看更多的主部分内容。
+  # 范围从 0 到 1.0。
+  sidePanelWidth: 0.3333  # 侧边面板宽度
+
+  # 如果为 true，增加聚焦侧边窗口的高度；创建手风琴效果。
+  expandFocusedSidePanel: false  # 展开聚焦的侧边面板
+
+  # 展开侧边面板相对于其他面板的权重。2 表示比其他面板高一倍。仅当 `expandFocusedSidePanel` 为 true 时相关。
+  expandedSidePanelWeight: 2  # 展开侧边面板权重
+
+  # 有时主窗口会分成两部分（例如，当所选文件同时有暂存和未暂存的更改时）。此设置控制两部分的分割方式。
+  # 选项有：
+  # - 'horizontal'：水平分割窗口
+  # - 'vertical'：垂直分割窗口
+  # - 'flexible'：（默认）如果窗口足够宽，则水平分割，否则垂直分割
+  mainPanelSplitMode: flexible  # 主面板分割模式
+
+  # 在半屏模式下窗口的分割方式（即按一次 '+' 后）。
+  # 可能的值：
+  # - 'left'：水平分割窗口（侧边面板在左，主视图在右）
+  # - 'top'：垂直分割窗口（侧边面板在上，主视图在下）
+  enlargedSideViewLocation: left  # 放大侧视图位置
+
+  # 如果为 true，在暂存视图中换行以适应视图宽度。这使得处理长行的差异更容易，例如 Markdown 文本段落。
+  wrapLinesInStagingView: true  # 在暂存视图中换行
+
+  # 如果为 true，进入暂存视图时默认启用块选择模式。
+  useHunkModeInStagingView: true  # 在暂存视图中使用块模式
+
+  # 可选 'auto'（默认）| 'en' | 'zh-CN' | 'zh-TW' | 'pl' | 'nl' | 'ja' | 'ko' | 'ru' | 'pt'
+  language: auto  # 语言
+
+  # 显示时间时使用的格式，例如提交时间。
+  # 使用 Go 的时间格式语法：https://pkg.go.dev/time#Time.Format
+  timeFormat: 02 Jan 06  # 时间格式
+
+  # 如果时间少于 24 小时前，显示时间时使用的格式。
+  # 使用 Go 的时间格式语法：https://pkg.go.dev/time#Time.Format
+  shortTimeFormat: 3:04PM  # 短时间格式
+
+  # 与颜色和样式相关的配置。
+  # 查看 https://github.com/jesseduffield/lazygit/blob/master/docs/Config.md#color-attributes
+  theme:
+    # 聚焦窗口的边框颜色
+    activeBorderColor:
+      - green
+      - bold  # 活动边框颜色
+
+    # 非聚焦窗口的边框颜色
+    inactiveBorderColor:
+      - default  # 非活动边框颜色
+
+    # 在该窗口中搜索时聚焦窗口的边框颜色
+    searchingActiveBorderColor:
+      - cyan
+      - bold  # 搜索时活动边框颜色
+
+    # 底部行中键绑定帮助文本的颜色
+    optionsTextColor:
+      - blue  # 选项文本颜色
+
+    # 选中行的背景颜色。
+    # 查看 https://github.com/jesseduffield/lazygit/blob/master/docs/Config.md#highlighting-the-selected-line
+    selectedLineBgColor:
+      - blue  # 选中行背景色
+
+    # 视图没有焦点时选中行的背景颜色。
+    inactiveViewSelectedLineBgColor:
+      - bold  # 非活动视图选中行背景色
+
+    # 复制的提交的前景色
+    cherryPickedCommitFgColor:
+      - blue  # 精选提交前景色
+
+    # 复制的提交的背景颜色
+    cherryPickedCommitBgColor:
+      - cyan  # 精选提交背景色
+
+    # 标记的基础提交（用于变基）的前景色
+    markedBaseCommitFgColor:
+      - blue  # 标记基础提交前景色
+
+    # 标记的基础提交（用于变基）的背景颜色
+    markedBaseCommitBgColor:
+      - yellow  # 标记基础提交背景色
+
+    # 未暂存更改的文件颜色
+    unstagedChangesColor:
+      - red  # 未暂存更改颜色
+
+    # 默认文本颜色
+    defaultFgColor:
+      - default  # 默认前景色
+
+  # 与提交长度指示器相关的配置
+  commitLength:
+    # 如果为 true，显示提交消息长度指示器
+    show: true  # 显示提交长度
+
+  # 如果为 true，在列表视图底部显示 '5 of 20' 页脚
+  showListFooter: true  # 显示列表页脚
+
+  # 如果为 true，在文件视图中以树形显示文件。如果为 false，则以平面列表显示文件。
+  # 可以在 Lazygit 内使用 '`' 键切换，但这不会更改默认设置。
+  showFileTree: true  # 显示文件树
+
+  # 如果为 true，在文件树中添加一个 "/" 根项目，表示仓库的根目录。仅在必要时添加，即当顶层有多个项目时。
+  showRootItemInFileTree: true  # 在文件树中显示根项目
+
+  # 如果为 true，在文件视图中显示每个文件更改的行数
+  showNumstatInFilesView: false  # 在文件视图中显示数字统计
+
+  # 如果为 true，Lazygit 启动时在命令日志中显示随机提示
+  showRandomTip: true  # 显示随机提示
+
+  # 如果为 true，显示命令日志
+  showCommandLog: true  # 显示命令日志
+
+  # 如果为 true，显示包含键绑定信息和有用按钮的底行。如果为 false，除非显示正在进行中的操作的加载器，否则将隐藏该行。
+  showBottomLine: true  # 显示底部行
+
+  # 如果为 true，在窗口标题中显示跳转到窗口的键绑定。
+  showPanelJumps: true  # 显示面板跳转
+
+  # 使用的 Nerd 字体版本。
+  # 可选：'2' | '3' | 空字符串（默认）
+  # 如果为空，则不显示图标。
+  nerdFontsVersion: ""  # Nerd 字体版本
+
+  # 如果为 true（默认），在文件视图中显示文件图标。仅当 NerdFontsVersion 不为空时相关。
+  showFileIcons: true  # 显示文件图标
+
+  # （未展开的）提交视图中作者姓名的长度。2 表示仅显示首字母。
+  commitAuthorShortLength: 2  # 提交作者短名长度
+
+  # 展开的提交视图中作者姓名的长度。2 表示仅显示首字母。
+  commitAuthorLongLength: 17  # 提交作者长名长度
+
+  # 提交视图中提交哈希的长度。如果 NF 图标未开启，0 显示 '*'。
+  commitHashLength: 8  # 提交哈希长度
+
+  # 如果为 true，在分支视图中显示分支名称旁边的提交哈希。
+  showBranchCommitHash: false  # 显示分支提交哈希
+
+  # 是否在分支视图中显示与基础分支的差异。
+  # 可选：'none' | 'onlyArrow'  | 'arrowAndNumber'
+  showDivergenceFromBaseBranch: none  # 显示与基础分支的差异
+
+  # 命令日志视图的高度
+  commandLogSize: 8  # 命令日志大小
+
+  # 查看文件更改时是否分割主窗口。
+  # 可选：'auto' | 'always'
+  # 如果为 'auto'，仅当文件同时有暂存和未暂存更改时才分割主窗口
+  splitDiff: auto  # 分割差异
+
+  # 聚焦窗口的默认大小。可以在 Lazygit 内使用 '+' 和 '_' 更改（但这不会更改默认设置）。
+  # 可选：'normal'（默认）| 'half' | 'full'
+  screenMode: normal  # 屏幕模式
+
+  # 窗口边框样式。
+  # 可选 'rounded'（默认）| 'single' | 'double' | 'hidden' | 'bold'
+  border: rounded  # 边框样式
+
+  # 如果为 true，在清除工作树时显示非常酷的爆炸动画。
+  animateExplosion: true  # 启用爆炸动画
+
+  # 是否将 UI 组件堆叠在一起。
+  # 可选 'auto'（默认）| 'always' | 'never'
+  portraitMode: auto  # 纵向模式
+
+  # 输入 '/' 时过滤内容的方式。
+  # 可选 'substring'（默认）| 'fuzzy'
+  filterMode: substring  # 过滤模式
+
+  # 与加载指示器相关的配置。
+  spinner:
+    # 加载指示器动画的帧。
+    frames:
+      - '|'
+      - /
+      - '-'
+      - \  # 加载动画帧
+
+    # 加载指示器的"速度"，单位为毫秒。
+    rate: 50  # 加载动画速率
+
+  # 状态面板视图。
+  # 可选 'dashboard'（默认）| 'allBranchesLog'
+  statusPanelView: dashboard  # 状态面板视图
+
+  # 如果为 true，弹出存储后跳转到文件面板
+  switchToFilesAfterStashPop: true  # 弹出存储后切换到文件面板
+
+  # 如果为 true，应用存储后跳转到文件面板
+  switchToFilesAfterStashApply: true  # 应用存储后切换到文件面板
+
+  # 如果为 true，当使用面板跳转键（默认 1 到 5）且目标面板已激活时，转到下一个标签页
+  switchTabsWithPanelJumpKeys: false  # 使用面板跳转键切换标签页
+
+# 与 git 相关的配置
 git:
-    pagers: []
-    commit:
-        signOff: false
-        autoWrapCommitMessage: true
-        autoWrapWidth: 72
-    merging:
-        manualCommit: false
-        args: ""
-        squashMergeMessage: Squash merge {{selectedRef}} into {{currentBranch}}
-    mainBranches:
-        - master
-        - main
-    skipHookPrefix: WIP
-    autoFetch: true
-    autoRefresh: true
-    autoForwardBranches: onlyMainBranches
-    fetchAll: true
-    autoStageResolvedConflicts: true
-    branchLogCmd: git log --graph --color=always --abbrev-commit --decorate --date=relative --pretty=medium {{branchName}} --
-    allBranchesLogCmds:
-        - git log --graph --all --color=always --abbrev-commit --decorate --date=relative  --pretty=medium
-    ignoreWhitespaceInDiffView: false
-    diffContextSize: 3
-    renameSimilarityThreshold: 50
-    overrideGpg: false
-    disableForcePushing: false
-    commitPrefix: []
-    commitPrefixes: {}
-    branchPrefix: ""
-    parseEmoji: false
-    log:
-        order: topo-order
-        showGraph: always
-        showWholeGraph: false
-    localBranchSortOrder: date
-    remoteBranchSortOrder: date
-    truncateCopiedCommitHashesTo: 12
+  # 分页器数组。每个条目具有以下格式：
+  #
+  #   # git diff 命令中 --color 参数的值。有些分页器希望将其设置为 'always'，有些则希望设置为 'never'
+  #   colorArg: "always"
+  #
+  #   # 例如
+  #   # diff-so-fancy
+  #   # delta --dark --paging=never
+  #   # ydiff -p cat -s --wrap --width={{columnWidth}}
+  #   pager: ""
+  #
+  #   # 例如 'difft --color=always'
+  #   externalDiffCommand: ""
+  #
+  #   # 如果为 true，Lazygit 将使用 git 的 `diff.external` 配置进行分页。
+  #   # 相对于 `externalDiffCommand` 的优势在于，这可以根据 .gitattributes 中的文件类型进行配置；请参阅
+  #   # https://git-scm.com/docs/gitattributes#_defining_an_external_diff_driver。
+  #   useExternalDiffGitConfig: false
+  #
+  # 更多信息请参阅 https://github.com/jesseduffield/lazygit/blob/master/docs/Custom_Pagers.md。
+  pagers: []  # 分页器配置
+
+  # 与提交相关的配置
+  commit:
+    # 如果为 true，提交时传递 '--signoff' 标志
+    signOff: false  # 提交时签署
+
+    # 输入时自动对提交消息进行 WYSIWYG 换行
+    autoWrapCommitMessage: true  # 自动换行提交消息
+
+    # 如果 autoWrapCommitMessage 为 true，则换行的宽度
+    autoWrapWidth: 72  # 自动换行宽度
+
+  # 与合并相关的配置
+  merging:
+    # 如果为 true，在子进程中运行合并，以便如果需要提交消息，Lazygit 不会挂起
+    # 仅适用于 Unix 用户。
+    manualCommit: false  # 手动提交
+
+    # 传递给 `git merge` 的额外参数，例如 --no-ff
+    args: ""  # 合并额外参数
+
+    # 用于压缩合并提交的提交消息。可以包含 "{{selectedRef}}" 和 "{{currentBranch}}" 占位符。
+    squashMergeMessage: Squash merge {{selectedRef}} into {{currentBranch}}  # 压缩合并消息
+
+  # 被视为"主"分支的列表，用于显示提交
+  mainBranches:
+    - master
+    - main  # 主分支列表
+
+  # 跳过钩子时使用的前缀。例如，如果设置为 'WIP'，则当提交消息以 'WIP' 开头时，将跳过预提交钩子
+  skipHookPrefix: WIP  # 跳过钩子的前缀
+
+  # 如果为 true，定期从远程获取
+  autoFetch: true  # 自动获取
+
+  # 如果为 true，定期刷新文件和子模块
+  autoRefresh: true  # 自动刷新
+
+  # 如果不是 "none"，在获取后，lazygit 将自动快进本地分支以匹配其上游。适用于非当前检出分支，并且仅适用于那些严格落后于上游的分支（而不是有分歧的分支）。
+  # 可能的值：'none' | 'onlyMainBranches' | 'allBranches'
+  autoForwardBranches: onlyMainBranches  # 自动快进分支
+
+  # 如果为 true，将 --all 参数传递给 git fetch
+  fetchAll: true  # 获取所有
+
+  # 如果为 true，lazygit 将自动暂存曾经有合并冲突但不再有的文件；并且，如果您已解决所有冲突，它还会询问您是否要继续合并或变基。如果为 false，它将不执行这些操作。
+  autoStageResolvedConflicts: true  # 自动暂存已解决的冲突
+
+  # 在主窗口中显示当前分支 git 日志时使用的命令
+  branchLogCmd: git log --graph --color=always --abbrev-commit --decorate --date=relative --pretty=medium {{branchName}} --  # 分支日志命令
+
+  # 用于在主窗口中显示所有分支 git 日志的命令，它们将按出现顺序循环（字符串数组）
+  allBranchesLogCmds:
+    - git log --graph --all --color=always --abbrev-commit --decorate --date=relative  --pretty=medium  # 所有分支日志命令
+
+  # 如果为 true，git diff 将使用 `--ignore-all-space` 标志渲染，该标志忽略空白更改。可以在 Lazygit 内使用 `<c-w>` 切换。
+  ignoreWhitespaceInDiffView: false  # 差异视图中忽略空白
+
+  # 每个差异块周围显示的上下文行数。可以在 Lazygit 内使用 `{` 和 `}` 键更改。
+  diffContextSize: 3  # 差异上下文大小
+
+  # 将文件视为重命名的阈值，以百分比表示。可以在 Lazygit 内使用 `(` 和 `)` 键更改。
+  renameSimilarityThreshold: 50  # 重命名相似度阈值
+
+  # 如果为 true，使用 GPG 时不产生单独的进程
+  overrideGpg: false  # 覆盖 GPG
+
+  # 如果为 true，不允许强制推送
+  disableForcePushing: false  # 禁用强制推送
+
+  # 查看 https://github.com/jesseduffield/lazygit/blob/master/docs/Config.md#predefined-commit-message-prefix
+  commitPrefix: []  # 提交前缀
+
+  # 查看 https://github.com/jesseduffield/lazygit/blob/master/docs/Config.md#predefined-commit-message-prefix
+  commitPrefixes: {}  # 提交前缀映射
+
+  # 查看 https://github.com/jesseduffield/lazygit/blob/master/docs/Config.md#predefined-branch-name-prefix
+  branchPrefix: ""  # 分支前缀
+
+  # 如果为 true，解析提交消息中的表情符号字符串，例如将 :rocket: 渲染为 🚀
+  # （这应该放在 'gui' 下，而不是 'git' 下）
+  parseEmoji: false  # 解析表情符号
+
+  # 提交视图中显示日志的配置
+  log:
+    # 可选：'date-order' | 'author-date-order' | 'topo-order' | 'default'
+    # 'topo-order' 使 git 日志图更易读，但提交可能不会按时间顺序出现。查看 https://git-scm.com/docs/
+    #
+    # 可以在 Lazygit 内通过 `Log menu -> Commit sort order` 更改（在提交窗口中默认 `<c-l>`）。
+    order: topo-order  # 日志排序顺序
+
+    # 这决定了是否在提交面板中渲染 git 图
+    # 可选 'always' | 'never' | 'when-maximised'
+    #
+    # 可以在 lazygit 内通过 `Log menu -> Show git graph` 切换（在提交窗口中默认 `<c-l>`）。
+    showGraph: always  # 显示 git 图
+
+    # 在提交视图中默认显示整个 git 图（相当于将 `--all` 参数传递给 `git log`）
+    showWholeGraph: false  # 显示整个图
+
+  # 本地分支视图中分支的排序方式。
+  # 可选：'date'（默认）| 'recency' | 'alphabetical'
+  # 可以在 Lazygit 内通过分支面板中的排序顺序菜单（`s`）更改。
+  localBranchSortOrder: date  # 本地分支排序顺序
+
+  # 远程分支视图中分支的排序方式。
+  # 可选：'date'（默认）| 'alphabetical'
+  # 可以在 Lazygit 内通过远程分支面板中的排序顺序菜单（`s`）更改。
+  remoteBranchSortOrder: date  # 远程分支排序顺序
+
+  # 将提交哈希复制到剪贴板时，截断到此长度。设置为 40 以禁用截断。
+  truncateCopiedCommitHashesTo: 12  # 复制提交哈希时截断长度
+
+# 定期更新检查
 update:
-    method: prompt
-    days: 14
+  # 可选：'prompt'（默认）| 'background' | 'never'
+  method: prompt  # 更新方法
+
+  # 更新检查之间的天数
+  days: 14  # 更新检查间隔
+
+# 后台刷新
 refresher:
-    refreshInterval: 10
-    fetchInterval: 60
-confirmOnQuit: false
-quitOnTopLevelReturn: false
-disableStartupPopups: false
-customCommands: []
-services: {}
-notARepository: prompt
-promptToReturnFromSubprocess: true
+  # 文件/子模块刷新间隔（秒）。
+  # 可以通过选项 'git.autoRefresh' 禁用自动刷新。
+  refreshInterval: 10  # 刷新间隔
+
+  # 重新获取间隔（秒）。
+  # 可以通过选项 'git.autoFetch' 禁用自动获取。
+  fetchInterval: 60  # 获取间隔
+
+# 如果为 true，在退出 Lazygit 前显示确认弹出窗口
+confirmOnQuit: false  # 退出时确认
+
+# 如果为 true，当用户在无法取消/关闭的情况下按退出键时退出 Lazygit
+quitOnTopLevelReturn: false  # 顶级返回时退出
+
+# 与 Lazygit 外部事物相关的配置，例如如何打开文件、复制到剪贴板等
+os:
+  # 编辑文件的命令。应包含 "{{filename}}"。
+  edit: ""  # 编辑命令
+
+  # 在给定行号编辑文件的命令。应包含 "{{filename}}"，并可选包含 "{{line}}"。
+  editAtLine: ""  # 在行号编辑命令
+
+  # 与 EditAtLine 相同，但命令需要等待窗口关闭。
+  editAtLineAndWait: ""  # 在行号编辑并等待命令
+
+  # lazygit 是否在编辑进程返回前挂起
+  editInTerminal: false  # 在终端中编辑
+
+  # 用于在编辑器中打开目录的命令
+  openDirInEditor: ""  # 在编辑器中打开目录
+
+  # 设置上述所有设置的内置预设。支持的预设在 editor_presets.go 的 getPreset 函数中定义。
+  editPreset: ""  # 编辑预设
+
+  # 打开文件的命令，就像双击文件一样。应包含 "{{filename}}"，但不支持 "{{line}}"。
+  open: ""  # 打开命令
+
+  # 打开链接的命令。应包含 "{{link}}"。
+  openLink: ""  # 打开链接命令
+
+  # 复制到剪贴板的命令。
+  # 查看 https://github.com/jesseduffield/lazygit/blob/master/docs/Config.md#custom-command-for-copying-to-and-pasting-from-clipboard
+  copyToClipboardCmd: ""  # 复制到剪贴板命令
+
+  # 从剪贴板读取的命令。
+  # 查看 https://github.com/jesseduffield/lazygit/blob/master/docs/Config.md#custom-command-for-copying-to-and-pasting-from-clipboard
+  readFromClipboardCmd: ""  # 从剪贴板读取命令
+
+  # 包含 shell 别名或 shell 函数的 shell 启动文件。这将在运行任何 shell 命令之前获取，以便 shell 函数在 `:` 命令提示符甚至自定义命令中可用。
+  # 查看 https://github.com/jesseduffield/lazygit/blob/master/docs/Config.md#using-aliases-or-functions-in-shell-commands
+  shellFunctionsFile: ""  # shell 函数文件
+
+# 如果为 true，打开 Lazygit 时不显示介绍性弹出窗口。
+disableStartupPopups: false  # 禁用启动弹出窗口
+
+# 可以在 Lazygit 内调用的用户配置命令
+# 查看 https://github.com/jesseduffield/lazygit/blob/master/docs/Custom_Command_Keybindings.md
+customCommands: []  # 自定义命令
+
+# 查看 https://github.com/jesseduffield/lazygit/blob/master/docs/Config.md#custom-pull-request-urls
+services: {}  # 服务配置
+
+# 在 git 仓库外打开 Lazygit 时的操作。
+# - 'prompt'：（默认）询问是初始化新仓库还是打开最近使用的仓库
+# - 'create'：初始化新仓库
+# - 'skip'：打开最近使用的仓库
+# - 'quit'：退出 Lazygit
+notARepository: prompt  # 非仓库时的行为
+
+# 如果为 true，子进程终止时显示确认。这允许您在返回 Lazygit 之前查看子进程的输出。
+promptToReturnFromSubprocess: true  # 从子进程返回时提示
+
+# 键绑定 - 已更新为 Colemak 布局
 keybinding:
-    universal:
-    status:
-    files:
-    branches:
-    worktrees:
-    commits:
-    amendAttribute:
-    stash:
-    commitFiles:
-    main:
-    submodules:
-    commitMessage:
+  universal:
+    quit: q  # 退出
+    quit-alt1: <c-c>  # 退出备用1
+    suspendApp: <c-z>  # 挂起应用
+    return: <esc>  # 返回
+    quitWithoutChangingDirectory: Q  # 退出但不更改目录
+    togglePanel: <tab>  # 切换面板
+    prevItem: <up>  # 上一个项目
+    nextItem: <down>  # 下一个项目
+    prevItem-alt: 'u'  # 上一个项目备用（Colemak 布局）
+    nextItem-alt: 'e'  # 下一个项目备用（Colemak 布局）
+    prevPage: ','  # 上一页
+    nextPage: .  # 下一页
+    scrollLeft: H  # 向左滚动
+    scrollRight: L  # 向右滚动
+    gotoTop: <  # 转到顶部
+    gotoBottom: '>'  # 转到底部
+    gotoTop-alt: <home>  # 转到顶部备用
+    gotoBottom-alt: <end>  # 转到底部备用
+    toggleRangeSelect: v  # 切换范围选择
+    rangeSelectDown: <s-down>  # 范围选择向下
+    rangeSelectUp: <s-up>  # 范围选择向上
+    prevBlock: <left>  # 上一个块
+    nextBlock: <right>  # 下一个块
+    prevBlock-alt: 'n'  # 上一个块备用（Colemak 布局）
+    nextBlock-alt: 'i'  # 下一个块备用（Colemak 布局）
+    nextBlock-alt2: <tab>  # 下一个块备用2
+    prevBlock-alt2: <backtab>  # 上一个块备用2
+    jumpToBlock:
+      - "1"
+      - "2"
+      - "3"
+      - "4"
+      - "5"  # 跳转到块
+    focusMainView: "0"  # 聚焦主视图
+    nextMatch: '='  # 下一个匹配（Colemak 布局）
+    prevMatch: '-'  # 上一个匹配（Colemak 布局）
+    startSearch: /  # 开始搜索
+    optionMenu: <disabled>  # 选项菜单
+    optionMenu-alt1: '?'  # 选项菜单备用1
+    select: <space>  # 选择
+    goInto: <enter>  # 进入
+    confirm: <enter>  # 确认
+    confirmMenu: <enter>  # 确认菜单
+    confirmSuggestion: <enter>  # 确认建议
+    confirmInEditor: <a-enter>  # 在编辑器中确认
+    confirmInEditor-alt: <c-s>  # 在编辑器中确认备用
+    remove: d  # 移除
+    new: 'k'  # 新建（Colemak 布局）
+    edit: 'o'  # 编辑（Colemak 布局）
+    openFile: 'O'  # 打开文件（Colemak 布局）
+    scrollUpMain: <pgup>  # 主视图向上滚动
+    scrollDownMain: <pgdown>  # 主视图向下滚动
+    scrollUpMain-alt1: 'U'  # 主视图向上滚动备用1（Colemak 布局）
+    scrollDownMain-alt1: 'E'  # 主视图向下滚动备用1（Colemak 布局）
+    scrollUpMain-alt2: '<c-u>'  # 主视图向上滚动备用2（Colemak 布局）
+    scrollDownMain-alt2: '<c-e>'  # 主视图向下滚动备用2（Colemak 布局）
+    executeShellCommand: ':'  # 执行 shell 命令
+    createRebaseOptionsMenu: m  # 创建变基选项菜单
+
+    # 出于遗留原因附加了 'Files'
+    pushFiles: P  # 推送文件
+
+    # 出于遗留原因附加了 'Files'
+    pullFiles: p  # 拉取文件
+    refresh: R  # 刷新
+    createPatchOptionsMenu: <c-p>  # 创建补丁选项菜单
+    nextTab: ']'  # 下一个标签页
+    prevTab: '['  # 上一个标签页
+    nextScreenMode: +  # 下一个屏幕模式
+    prevScreenMode: _  # 上一个屏幕模式
+    cyclePagers: '|'  # 循环分页器
+    undo: 'l'  # 撤销（Colemak 布局）
+    redo: '<c-r>'  # 重做（Colemak 布局）
+    filteringMenu: '<c-f>'  # 过滤菜单（Colemak 布局）
+    diffingMenu: 'M'  # 差异菜单（Colemak 布局）
+    diffingMenu-alt: <c-e>  # 差异菜单备用
+    copyToClipboard: <c-o>  # 复制到剪贴板
+    openRecentRepos: <c-r>  # 打开最近仓库
+    submitEditorText: <enter>  # 提交编辑器文本
+    extrasMenu: '@'  # 额外菜单
+    toggleWhitespaceInDiffView: <c-w>  # 切换差异视图中的空白
+    increaseContextInDiffView: '}'  # 增加差异视图中的上下文
+    decreaseContextInDiffView: '{'  # 减少差异视图中的上下文
+    increaseRenameSimilarityThreshold: )  # 增加重命名相似度阈值
+    decreaseRenameSimilarityThreshold: (  # 减少重命名相似度阈值
+    openDiffTool: <c-t>  # 打开差异工具
+  status:
+    checkForUpdate: u  # 检查更新
+    recentRepos: <enter>  # 最近仓库
+    allBranchesLogGraph: a  # 所有分支日志图
+  files:
+    commitChanges: c  # 提交更改
+    commitChangesWithoutHook: w  # 提交更改（无钩子）
+    amendLastCommit: A  # 修改最后提交
+    commitChangesWithEditor: C  # 使用编辑器提交更改
+    findBaseCommitForFixup: <c-f>  # 查找修复的基础提交
+    confirmDiscard: x  # 确认丢弃
+    ignoreFile: 'I'  # 忽略文件（Colemak 布局）
+    refreshFiles: r  # 刷新文件
+    stashAllChanges: s  # 存储所有更改
+    viewStashOptions: S  # 查看存储选项
+    toggleStagedAll: a  # 切换全部暂存
+    viewResetOptions: D  # 查看重置选项
+    fetch: f  # 获取
+    toggleTreeView: '`'  # 切换树视图
+    openMergeOptions: M  # 打开合并选项
+    openStatusFilter: <c-b>  # 打开状态过滤器
+    copyFileInfoToClipboard: "y"  # 复制文件信息到剪贴板
+    collapseAll: '-'  # 全部折叠
+    expandAll: =  # 全部展开
+  branches:
+    createPullRequest: o  # 创建拉取请求
+    viewPullRequestOptions: O  # 查看拉取请求选项
+    copyPullRequestURL: <c-y>  # 复制拉取请求 URL
+    checkoutBranchByName: c  # 按名称检出分支
+    forceCheckoutBranch: F  # 强制检出分支
+    checkoutPreviousBranch: '-'  # 检出上一个分支
+    rebaseBranch: r  # 变基分支
+    renameBranch: R  # 重命名分支
+    mergeIntoCurrentBranch: M  # 合并到当前分支
+    moveCommitsToNewBranch: "N"  # 移动提交到新分支
+    viewGitFlowOptions: 'I'  # 查看 Git Flow 选项（Colemak 布局）
+    fastForward: f  # 快进
+    createTag: T  # 创建标签
+    pushTag: P  # 推送标签
+    setUpstream: 'U'  # 设置上游（Colemak 布局）
+    fetchRemote: f  # 获取远程
+    addForkRemote: F  # 添加复刻远程
+    sortOrder: s  # 排序顺序
+  worktrees:
+    viewWorktreeOptions: w  # 查看工作树选项
+  commits:
+    squashDown: s  # 向下压缩
+    renameCommit: r  # 重命名提交
+    renameCommitWithEditor: R  # 使用编辑器重命名提交
+    viewResetOptions: g  # 查看重置选项
+    markCommitAsFixup: f  # 标记提交为修复
+    createFixupCommit: F  # 创建修复提交
+    squashAboveCommits: S  # 压缩上方提交
+    moveDownCommit: '<c-e>'  # 向下移动提交（Colemak 布局）
+    moveUpCommit: '<c-u>'  # 向上移动提交（Colemak 布局）
+    amendToCommit: A  # 修改到提交
+    resetCommitAuthor: a  # 重置提交作者
+    pickCommit: p  # 选择提交
+    revertCommit: t  # 恢复提交
+    cherryPickCopy: C  # 精选复制
+    pasteCommits: V  # 粘贴提交
+    markCommitAsBaseForRebase: B  # 标记提交为变基基础
+    tagCommit: T  # 标签提交
+    checkoutCommit: <space>  # 检出提交
+    resetCherryPick: <c-R>  # 重置精选
+    copyCommitAttributeToClipboard: "y"  # 复制提交属性到剪贴板
+    openLogMenu: <c-l>  # 打开日志菜单
+    openInBrowser: o  # 在浏览器中打开
+    viewBisectOptions: b  # 查看二分查找选项
+    startInteractiveRebase: i  # 开始交互式变基
+    selectCommitsOfCurrentBranch: '*'  # 选择当前分支的提交
+  amendAttribute:
+    resetAuthor: a  # 重置作者
+    setAuthor: A  # 设置作者
+    addCoAuthor: c  # 添加共同作者
+  stash:
+    popStash: g  # 弹出存储
+    renameStash: r  # 重命名存储
+  commitFiles:
+    checkoutCommitFile: c  # 检出提交文件
+  main:
+    toggleSelectHunk: a  # 切换选择块
+    pickBothHunks: b  # 选择两个块
+    editSelectHunk: E  # 编辑选择块
+  submodules:
+    init: i  # 初始化
+    update: u  # 更新
+    bulkMenu: b  # 批量菜单
+  commitMessage:
+    commitMenu: <c-o>  # 提交菜单
