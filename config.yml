@@ -1,8 +1,8 @@
 keybinding:
   universal:
-    prevItem-alt: 'u'
-    nextItem-alt: 'e'
-    prevBlock-alt: 'n'
+    prevItem-alt: 'e'
+    nextItem-alt: 'n'
+    prevBlock-alt: 'h'
     nextBlock-alt: 'i'
     nextMatch: '='
     prevMatch: '-'
@@ -20,6 +20,7 @@ keybinding:
   files:
     ignoreFile: 'I'
   commits:
+    startInteractiveRebase: '<disabled>'
     moveDownCommit: '<c-e>'
     moveUpCommit: '<c-u>'
   branches:
