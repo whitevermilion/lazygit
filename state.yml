@@ -1,8 +1,20 @@
 lastupdatecheck: 0
 recentrepos:
     - /home/red/.config/lazygit
+    - /home/red/.config/emacs
+    - /home/red/.config/fish
+    - /home/red/.config/nvim
+    - /home/red/.config/hypr
+    - /home/red/.config/mpv
+    - /home/red/Documents/.obsidian/test_expriment/nemu/NEMU2021
+    - /home/red/.config/yazi
+    - /home/red/.config/kanata
+    - /home/red/.config/kitty
+    - /home/red/Documents/.obsidian/test_expriment/malloclab
+    - /home/red/.config/tmux
+    - /home/red/Documents/.obsidian/test_expriment/proxylab
 startuppopupversion: 5
-didshowhunkstaginghint: false
-lastversion: 0.57.0
+didshowhunkstaginghint: true
+lastversion: 0.58.1
 customcommandshistory: []
 hidecommandlog: false
