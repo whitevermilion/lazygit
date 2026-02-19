@@ -1,20 +1,20 @@
 lastupdatecheck: 0
 recentrepos:
     - /home/red/.config/lazygit
-    - /home/red/.config/emacs
-    - /home/red/.config/fish
-    - /home/red/.config/nvim
     - /home/red/.config/hypr
-    - /home/red/.config/mpv
-    - /home/red/Documents/.obsidian/test_expriment/nemu/NEMU2021
-    - /home/red/.config/yazi
-    - /home/red/.config/kanata
+    - /home/red/.config/fish
     - /home/red/.config/kitty
-    - /home/red/Documents/.obsidian/test_expriment/malloclab
+    - /home/red/.config/yazi
+    - /home/red/.config/keyd
+    - /home/red/Code/CTF-learn-note
+    - /home/red/.config/nvim
+    - /home/red/Code/labuladong
+    - /home/red/.config/niri
+    - /home/red/.config/wofi
     - /home/red/.config/tmux
-    - /home/red/Documents/.obsidian/test_expriment/proxylab
+    - /home/red/.config/mpv
 startuppopupversion: 5
 didshowhunkstaginghint: true
-lastversion: 0.58.1
+lastversion: 0.59.0
 customcommandshistory: []
 hidecommandlog: false
